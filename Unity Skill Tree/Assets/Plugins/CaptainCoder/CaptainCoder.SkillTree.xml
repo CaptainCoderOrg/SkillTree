@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CaptainCoder.SkillTree</name>
+    </assembly>
+    <members>
+        <member name="T:CaptainCoder.SkillTree.ISkillTree">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

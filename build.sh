@@ -2,11 +2,11 @@
 dotnet build CaptainCoder.Core/ -c Release
 CORE_PATH="CaptainCoder.Core/CaptainCoder/Core/bin/Release/netstandard2.1"
 CORE="CaptainCoder.Core"
-INVENTORY_PATH="CaptainCoder.Core/CaptainCoder/Inventory/bin/Release/netstandard2.1"
-INVENTORY="CaptainCoder.Inventory"
+SKILLTREE_PATH="CaptainCoder.Core/CaptainCoder/SkillTree/bin/Release/netstandard2.1"
+SKILLTREE="CaptainCoder.SkillTree"
 UNITY_DLL_PATH="Unity Skill Tree/Assets/Plugins/CaptainCoder"
 cp "$CORE_PATH/$CORE.dll" \
     "$CORE_PATH/$CORE.xml" \
-    "$INVENTORY_PATH/$INVENTORY.dll" \
-    "$INVENTORY_PATH/$INVENTORY.xml" \
+    "$SKILLTREE_PATH/$SKILLTREE.dll" \
+    "$SKILLTREE_PATH/$SKILLTREE.xml" \
     "$UNITY_DLL_PATH/"

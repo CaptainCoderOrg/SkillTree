@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CaptainCoder.Core</name>
+    </assembly>
+    <members>
+        <member name="T:CaptainCoder.Core.Collections.ReadOnlySet`1">
+            <summary>
+            A read only view of a set.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.#ctor(System.Collections.Generic.ISet{`0})">
+            <summary>
+            Instantiates a view of the given set.
+            </summary>
+            <param name="set"></param>
+        </member>
+        <member name="P:CaptainCoder.Core.Collections.ReadOnlySet`1.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:CaptainCoder.Core.Collections.ReadOnlySet`1.IsReadOnly">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.Contains(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.CopyTo(`0[],System.Int32)">
+            <inheritdoc/>    
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.Remove(`0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.System#Collections#Generic#ICollection{T}#Add(`0)">
+            <summary>
+            This method is not supported.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.System#Collections#Generic#ISet{T}#UnionWith(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            This method is not supported.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.System#Collections#Generic#ISet{T}#IntersectWith(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            This method is not supported.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.System#Collections#Generic#ISet{T}#ExceptWith(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            This method is not supported.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.System#Collections#Generic#ISet{T}#SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            This method is not supported.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.System#Collections#Generic#ISet{T}#Add(`0)">
+            <summary>
+            This method is not supported.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Collections.ReadOnlySet`1.System#Collections#Generic#ICollection{T}#Clear">
+            <summary>
+            This method is not supported.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Core.DictionaryExtensions">
+            <summary></summary>
+        </member>
+        <member name="M:CaptainCoder.Core.DictionaryExtensions.KeyValuePairEquals``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.Dictionary{``0,``1})">
+            <summary>
+            Performs a deep comparison of all key value pairs in <paramref name="dict0"/> and <paramref name="dict1"/>.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Core.SetExtensionMethods">
+            <summary> </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.SetExtensionMethods.AsReadOnly``1(System.Collections.Generic.ISet{``0})">
+            <summary>
+            Creates and returns a readonly view of the specified <paramref name="set"/>
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Core.MutablePosition">
+            <summary>
+            A discrete mutable position defined by a row and column. For convenience,
+            this struct can be implicitly cast to a <see cref="T:CaptainCoder.Core.Position"/>.
+            </summary>
+        </member>
+        <member name="F:CaptainCoder.Core.MutablePosition.Row">
+            <summary></summary>
+        </member>
+        <member name="F:CaptainCoder.Core.MutablePosition.Col">
+            <summary></summary>
+        </member>
+        <member name="M:CaptainCoder.Core.MutablePosition.Freeze">
+            <summary>
+            Freezes this struct into an immutable <see cref="T:CaptainCoder.Core.Position"/>
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Core.Position">
+            <summary>
+            A discrete readonly position defined by a row and column. For convenience,
+            this struct supports an implicit cast from (int, int) tuples and the <see
+            cref="T:CaptainCoder.Core.MutablePosition"/> struct.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Position.#ctor(System.Int32,System.Int32)">
+            <summary>
+            A discrete readonly position defined by a row and column. For convenience,
+            this struct supports an implicit cast from (int, int) tuples and the <see
+            cref="T:CaptainCoder.Core.MutablePosition"/> struct.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Position.op_Implicit(System.ValueTuple{System.Int32,System.Int32})~CaptainCoder.Core.Position">
+            <summary>
+            Allows (int, int) tuples to be used anywhere a Position can be used. Be careful not to 
+            do this when using a position as a key in a HashSet or Dictionary.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Position.op_Implicit(CaptainCoder.Core.MutablePosition)~CaptainCoder.Core.Position">
+            <summary>
+            Allows MutablePosition to be used anywhere a Position could be used.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Position.op_Addition(CaptainCoder.Core.Position,CaptainCoder.Core.Position)">
+            <summary>
+            Sums the row and column values together
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Position.op_Subtraction(CaptainCoder.Core.Position,CaptainCoder.Core.Position)">
+            <summary>
+            Calculates the simple difference in row and column values
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Core.PositionExtensions">
+            <summary></summary>
+        </member>
+        <member name="M:CaptainCoder.Core.PositionExtensions.Freeze(System.Collections.Generic.IEnumerable{CaptainCoder.Core.MutablePosition})">
+            <summary>
+            Copies an IEnumberable of <see cref="T:CaptainCoder.Core.MutablePosition"/>s and freezes them as readonly <see cref="T:CaptainCoder.Core.Position"/>s.
+            </summary>
+        </member>
+    </members>
+</doc>
