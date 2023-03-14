@@ -4,9 +4,153 @@
         <name>CaptainCoder.SkillTree</name>
     </assembly>
     <members>
-        <member name="T:CaptainCoder.SkillTree.ISkillTree">
+        <member name="T:CaptainCoder.SkillTree.HasSkillRequirement`1">
             <summary>
+            A <see cref="T:CaptainCoder.SkillTree.HasSkillRequirement`1"/> is used to ensure that a <see
+            cref="T:CaptainCoder.SkillTree.ISkilledEntity`1"/> has acquired a specific skill.
+            </summary>
+            <typeparam name="T">The skill type. The type should be useable with a
+            HashSet and Dictionary</typeparam>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.HasSkillRequirement`1.#ctor(`0)">
+            <summary>
+            Instantiates an instance for the specified <paramref name="skill"/>.
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.SkillTree.HasSkillRequirement`1.RequiredSkill">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.HasSkillRequirement`1.MeetsRequirement(CaptainCoder.SkillTree.ISkilledEntity{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:CaptainCoder.SkillTree.ISkill">
+            <summary>
+            Represents a skill
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.SkillTree.ISkill.Name">
+            <summary>
+            The name of this skill
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.SkillTree.ISkill.Description">
+            <summary>
+            A description of this skill
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.SkillTree.ISkilledEntity`1">
+            <summary>
+            An <see cref="T:CaptainCoder.SkillTree.ISkilledEntity`1"/> represents an entity that can acquire
+            skills of the specified type.
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.SkillTree.ISkilledEntity`1.Skills">
+            <summary>
+            A HashSet of skills that this entity has acquired
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.SkillTree.ISkillNode`1">
+            <summary>
+            Represents a skill within a skill tree.
+            </summary>
+            <typeparam name="T">The type of skill this node holds</typeparam>
+        </member>
+        <member name="P:CaptainCoder.SkillTree.ISkillNode`1.Skill">
+            <summary>
+            The skill that is unlocked with this node.
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.SkillTree.ISkillNode`1.Requirements">
+            <summary>
+            A list of requirements that must be met to gain this skill
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.SkillTree.ISkillNode`1.Children">
+            <summary>
+            A list of children skill nodes
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.ISkillNode`1.CheckRequirements(CaptainCoder.SkillTree.ISkilledEntity{`0})">
+            <summary>
+            Checks if the specified <paramref name="entity"/> meets the
+            requirements to acquire this skill.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.SkillTree.IRequirement`1">
+            <summary>
+            A Requirement acts as a predicate on a character.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.IRequirement`1.MeetsRequirement(CaptainCoder.SkillTree.ISkilledEntity{`0})">
+            <summary>
+            Checks if the specified <paramref name="entity"/> meets this
+            requirement.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.SkillTree.ISkillTree`1">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.SkillTree.ISkillTree`1.Root">
+            <summary>
+            The root node of this skill tree
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.ISkillTree`1.GetNode(`0)">
+            <summary>
+            Retrieves the <see cref="T:CaptainCoder.SkillTree.ISkillNode`1"/> associated with the specified
+            <paramref name="skill"/>. Throws an exception if the specified <paramref
+            name="skill"/> is not in this <see cref="T:CaptainCoder.SkillTree.ISkillTree`1"/>.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.SkillTree.SkillTreeBuilder`1">
+             <summary>
+             A <see cref="T:CaptainCoder.SkillTree.SkillTreeBuilder`1"/> is used to construct an <see cref="T:CaptainCoder.SkillTree.ISkillTree`1"/>. 
+             When adding a skill, this tree automatically adds a requirement to the child skill that
+             marks the parent as a requirement. Thus, if a specific skill has two parents, both parents
+             are required to obtain that skill.
+             See the example below for usage:
+             </summary>
+             <example>
+             The following example constructs a simple skill tree with 5 nodes:
+             <code>
+             SkillTreeBuilder&lt;SkillType&gt; builder = new(Hero);
+                    .AddSkill(Hero, SpellCasting)
+                    .AddSkill(Hero, DivineSense)
+                    .AddSkill(SpellCasting, LayOnHands)
+                    .AddSkill(DivineSense, SacredOath)
+                    .AddSkill(SpellCasting, SacredOath);
             
+                SkillTree = builder.Build();
+             </code>
+             </example>
+             <typeparam name="T">The skill type that will be contained within this tree.</typeparam>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.SkillTreeBuilder`1.#ctor(`0)">
+            <summary>
+            Instantiates an instance specifying the root node of the resulting <see cref="T:CaptainCoder.SkillTree.ISkillTree`1"/>
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.SkillTreeBuilder`1.AddSkill(`0,`0)">
+            <summary>
+            Adds the specified <paramref name="parent"/> to <paramref name="child"/> requirement
+            to the resulting <see cref="T:CaptainCoder.SkillTree.ISkillTree`1"/>.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.SkillTreeBuilder`1.AddRequirement(`0,CaptainCoder.SkillTree.IRequirement{`0})">
+            <summary>
+            Adds the specified <paramref name="requirement"/> to the <paramref name="skill"/>
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.SkillTreeBuilder`1.Build">
+            <summary>
+            Builds and returns a <see cref="T:CaptainCoder.SkillTree.ISkillTree`1"/> as specified by this builder. Future
+            modifications to the builder do not affect the returned tree.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.SkillTreeBuilder`1.SkillNode.Clone(System.Collections.Generic.Dictionary{`0,CaptainCoder.SkillTree.SkillTreeBuilder{`0}.SkillNode})">
+            <summary>
+            Performs a "deep" clone of this node using the specified cache.
             </summary>
         </member>
     </members>
