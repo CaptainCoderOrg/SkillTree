@@ -1,0 +1,22 @@
+title: Skill Tree
+description: Let's make a Skill Tree
+theme: just-the-docs
+
+url: https://skilltree.captaincoder.org/
+
+# aux_links:
+#   Google Classroom: https://classroom.google.com/
+
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: yellow
+  tip:
+    title: Tip
+    color: blue
+  funfact:
+    title: "Fun Fact"
+    color: blue
