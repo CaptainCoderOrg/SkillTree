@@ -1,6 +1,7 @@
 title: Skill Tree
 description: Let's make a Skill Tree
 theme: just-the-docs
+gems: [jekyll-mermaid]
 
 url: https://skilltree.captaincoder.org/
 

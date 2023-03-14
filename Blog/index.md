@@ -24,7 +24,7 @@ hope someone finds this blog useful!
 
 ## Project Overview
 
-The goal of this project is to create a functional skill tree system
+The goal **of** this project is to create a functional skill tree system
 that can be dropped into an existing project, restyled, and reused.
 
 ## Day 1 - Design Document and Project Scope
@@ -35,5 +35,15 @@ a few interfaces: `ISkilledCharacter`, `ISkillNode`, and `ISkillTree`.
 
 * [Read More]({% link pages/01-day-1.md %})
 * [Watch On YouTube](https://youtube.com/live/am5e_8QieYM?feature=share)
+
+## Day 2: Skill Tree Builder and Unit Testing
+
+Today, we implemented a `SkillTreeBuilder` class that allows for construction of
+an `ISkillTree`. While implementing this, we discovered a few flaws in our
+interfaces which we corrected. Additionally, we wrote unit tests to validate
+that the `SkillTreeBuilder` we implemented was correct.
+
+* [Read More]({% link pages/02-day-2.md %})
+* [Watch On YouTube](https://youtube.com/live/33_g4hJukIo)
 
 {% include Links.md %}
