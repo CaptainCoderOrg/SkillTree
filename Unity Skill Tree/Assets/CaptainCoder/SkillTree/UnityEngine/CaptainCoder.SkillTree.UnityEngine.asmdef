@@ -1,0 +1,16 @@
+{
+    "name": "CaptainCoder.SkillTree.UnityEngine",
+    "rootNamespace": "CaptainCoder.SkillTree.UnityEngine",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "CaptainCoder.SkillTree.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
