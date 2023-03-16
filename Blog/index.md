@@ -46,4 +46,13 @@ that the `SkillTreeBuilder` we implemented was correct.
 * [Read More]({% link pages/02-day-2.md %})
 * [Watch On YouTube](https://youtube.com/live/33_g4hJukIo)
 
+# Day 3: Manually Building a UI
+
+Today, we manually built a visual representation of a Skill Tree 
+using Unity's UI Toolkit. Additionally, we explored the Vector Graphics
+API to automatically connect nodes in the Skill Tree together.
+
+* [Read More]({% link pages/03-day-3.md %})
+* [Watch On YouTube](https://youtube.com/live/ow5piavuQaI)
+
 {% include Links.md %}
