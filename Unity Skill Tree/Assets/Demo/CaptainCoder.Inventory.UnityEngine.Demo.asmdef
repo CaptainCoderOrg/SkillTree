@@ -1,0 +1,18 @@
+{
+    "name": "CaptainCoder.Inventory.UnityEngine.Demo",
+    "rootNamespace": "CaptainCoder.Inventory.UnityEngine.Demo",
+    "references": [
+        "GUID:e5329521c78040a4abf63bc85d145f2b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "CaptainCoder.SkillTree.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

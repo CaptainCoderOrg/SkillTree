@@ -24,8 +24,6 @@ public class LineElement : VisualElement
         VisualElement end = parent.Q<VisualElement>(EndElement);
         Vector2 startVector = start.layout.center;
         Vector2 endVector = end.layout.center;
-        Debug.Log($"Start: {startVector} -> End: {endVector}");
-        Debug.Log("Generating!");
         var paint2D = mgc.painter2D;
         paint2D.strokeColor = Color.red;
         paint2D.lineWidth = 5;
