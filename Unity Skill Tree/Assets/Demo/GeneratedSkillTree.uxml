@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <CaptainCoder.SkillTree.UnityEngine.SkillTreeElement name="SkillTreeElement" skill-tree-asset="Assets/Demo/Skill Tree/Paladin Skill Tree.asset" />
+    </ui:VisualElement>
+</ui:UXML>

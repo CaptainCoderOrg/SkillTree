@@ -98,6 +98,11 @@
             The root node of this skill tree
             </summary>
         </member>
+        <member name="P:CaptainCoder.SkillTree.ISkillTree`2.Nodes">
+            <summary>
+            Returns an IEnumerable that contains each node in this tree.
+            </summary>
+        </member>
         <member name="M:CaptainCoder.SkillTree.ISkillTree`2.GetNode(`1)">
             <summary>
             Retrieves the <see cref="T:CaptainCoder.SkillTree.ISkillNode`2"/> associated with the specified
