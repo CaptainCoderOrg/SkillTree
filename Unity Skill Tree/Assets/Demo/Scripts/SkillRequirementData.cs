@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CaptainCoder.SkillTree.UnityEngine
+namespace CaptainCoder.SkillTree.UnityEngine.Demo
 {
     [CreateAssetMenu(fileName = "Skill", menuName = "Skills")]
-    public class SkillRequirementData : ScriptableObject, IRequirement<SkillData>
+    public class SkillRequirementData : ScriptableObject, IRequirement<IPlayerCharacter, SkillData>
     {
         [field: SerializeField]
         public string Name { get; private set; }
@@ -13,7 +13,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
         [field: SerializeField]
         public string Description { get; private set; }
 
-        public bool MeetsRequirement(ISkilledEntity<SkillData> entity)
+        public virtual bool MeetsRequirement(IPlayerCharacter entity)
         {
             throw new System.NotImplementedException();
         }

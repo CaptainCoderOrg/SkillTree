@@ -15,5 +15,6 @@ MonoBehaviour:
   <Name>k__BackingField: Divine Sense
   <Description>k__BackingField: You can sense the divine
   <Image>k__BackingField: {fileID: 2800000, guid: 5a9d619752c79724eb157cfd10f38225, type: 3}
-  <requirements>k__BackingField:
-  - {fileID: 11400000, guid: 4f5b9372548aeea4f980bec50563908e, type: 2}
+  <RequiredLevel>k__BackingField: 1
+  <RequiredSkillPoints>k__BackingField: 1
+  <Requirements>k__BackingField: []

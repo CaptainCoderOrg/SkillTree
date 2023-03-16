@@ -20,7 +20,6 @@ public class LineElement : VisualElement
     private void OnGenerateVisualContent(MeshGenerationContext mgc)
     {
         VisualElement start = parent.Q<VisualElement>(StartElement);
-        Debug.Log(start.name);
         VisualElement end = parent.Q<VisualElement>(EndElement);
         Vector2 startVector = start.layout.center;
         Vector2 endVector = end.layout.center;

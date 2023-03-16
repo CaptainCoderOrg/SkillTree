@@ -1,6 +1,6 @@
 {
     "name": "CaptainCoder.Inventory.UnityEngine.Demo",
-    "rootNamespace": "CaptainCoder.Inventory.UnityEngine.Demo",
+    "rootNamespace": "CaptainCoder.SkillTree.UnityEngine.Demo",
     "references": [
         "GUID:e5329521c78040a4abf63bc85d145f2b"
     ],

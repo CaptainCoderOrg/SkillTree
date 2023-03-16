@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79aec77c16f344e4da237dc0584bb2ec, type: 3}
-  m_Name: Level Required
+  m_Script: {fileID: 11500000, guid: adb5b9d6e6cb44147937d137fe51d6a1, type: 3}
+  m_Name: GoodOnlyRequirement
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Level One Requirement
-  <Description>k__BackingField: 
-  <RequiredLevel>k__BackingField: 1
+  <Name>k__BackingField: Good Alignment
+  <Description>k__BackingField: The hero must be good.
+  <Alignments>k__BackingField: 00000000
