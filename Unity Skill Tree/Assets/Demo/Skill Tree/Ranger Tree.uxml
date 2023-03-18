@@ -1,13 +1,15 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="SkillTree" style="background-color: rgba(0, 0, 0, 0); width: 100%; height: 100%; position: absolute;">
-        <ui:VisualElement name="Edges" style="background-color: rgba(0, 0, 0, 0); width: 100%; height: 100%; position: absolute;">
-            <LineElement name="Hero -&gt; DivineSense" start-element="Hero" end-element="DivineSense" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
-            <LineElement name="Hero -&gt; LayHands" start-element="Hero" end-element="LayHands" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
-        </ui:VisualElement>
-        <ui:VisualElement name="Nodes" style="background-color: rgba(0, 0, 0, 0); width: 100%; height: 100%; position: absolute;">
-            <ui:VisualElement name="Hero" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/hero-node.png?fileID=21300000&amp;guid=03e10783b8cbcce42af2a3ec24fd51c2&amp;type=3#hero-node&apos;); top: 253px; left: 96px;" />
-            <ui:VisualElement name="DivineSense" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/divine-sense-node.png?fileID=21300000&amp;guid=5a9d619752c79724eb157cfd10f38225&amp;type=3#divine-sense-node&apos;);" />
-            <ui:VisualElement name="LayHands" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Sprites/layhands-node.png?fileID=21300000&amp;guid=442d875d3891cfa4c9ba9d681fc22570&amp;type=3#layhands-node&apos;);" />
-        </ui:VisualElement>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="SkillTree" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;">
+    <ui:VisualElement name="Edges" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;">
+      <LineElement name="Hero -&gt; DivineSense" start-element="Hero" end-element="DivineSense" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
+      <LineElement name="Hero -&gt; LayHands" start-element="Hero" end-element="LayHands" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
+      <LineElement name="LayHands -&gt; SpellCasting" start-element="LayHands" end-element="SpellCasting" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
     </ui:VisualElement>
+    <ui:VisualElement name="Nodes" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;">
+      <ui:VisualElement name="Hero" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/hero-node.png?fileID=21300000&amp;guid=03e10783b8cbcce42af2a3ec24fd51c2&amp;type=3#hero-node');" />
+      <ui:VisualElement name="DivineSense" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/divine-sense-node.png?fileID=21300000&amp;guid=5a9d619752c79724eb157cfd10f38225&amp;type=3#divine-sense-node');" />
+      <ui:VisualElement name="LayHands" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/layhands-node.png?fileID=21300000&amp;guid=442d875d3891cfa4c9ba9d681fc22570&amp;type=3#layhands-node');" />
+      <ui:VisualElement name="SpellCasting" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/spell-casting-node.png?fileID=21300000&amp;guid=62112b66ef156604f8edf72aa17e2abe&amp;type=3#spell-casting-node');" />
+    </ui:VisualElement>
+  </ui:VisualElement>
 </ui:UXML>

@@ -1,6 +1,9 @@
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
+
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System.Linq;
 namespace CaptainCoder.SkillTree.UnityEngine
 {
@@ -46,6 +49,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
             return builder.Build();
         }
 
+        #if UNITY_EDITOR
         void OnValidate()
         {
             if (!GenerateUXML) { return; }
@@ -62,6 +66,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
             
             GenerateUXML = false;
         }
+        #endif
 
         [System.Serializable]
         public class Edge

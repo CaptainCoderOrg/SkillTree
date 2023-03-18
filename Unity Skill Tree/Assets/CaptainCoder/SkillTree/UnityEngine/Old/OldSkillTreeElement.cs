@@ -11,10 +11,10 @@ namespace CaptainCoder.SkillTree.UnityEngine
     using Node = ISkillNode<ISkilledEntity<ISkill>, ISkill>;
     // using SkillTreeData = SkillTreeData<ISkilledEntity<ISkill>, ISkill>;
 
-    public class SkillTreeElement : VisualElement
+    public class OldSkillTreeElement : VisualElement
     {
         private ISkillTree<ISkilledEntity<ISkill>, ISkill> _skills;
-        public SkillTreeElement()
+        public OldSkillTreeElement()
         {
             generateVisualContent += OnGenerateVisualContent;
         }
@@ -22,8 +22,8 @@ namespace CaptainCoder.SkillTree.UnityEngine
         {
             VisualElement anchors = parent?.Q<VisualElement>("Anchors");
             if (anchors == null) { return; }
-            var nodes = GetImagesContainer().Children().Where(c => c is SkillNodeElement).Select(c => c as SkillNodeElement);
-            foreach (SkillNodeElement node in nodes)
+            var nodes = GetImagesContainer().Children().Where(c => c is OldSkillNodeElement).Select(c => c as OldSkillNodeElement);
+            foreach (OldSkillNodeElement node in nodes)
             {
                 VisualElement anchor = anchors.Q<VisualElement>(node.Skill.Name.Replace(" ",""));
                 if (anchor != null)
@@ -44,7 +44,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
             images.Clear();
             foreach (Node node in skillTree.Nodes)
             {
-                SkillNodeElement nodeElement = new(node.Skill);
+                OldSkillNodeElement nodeElement = new(node.Skill);
                 images.Add(nodeElement);
             }
             _skills = skillTree;
@@ -76,7 +76,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
 
         public string SkillTreeAsset { get; set; }
 
-        public sealed new class UxmlFactory : UxmlFactory<SkillTreeElement, UxmlTraits> { }
+        public sealed new class UxmlFactory : UxmlFactory<OldSkillTreeElement, UxmlTraits> { }
 
         public sealed new class UxmlTraits : VisualElement.UxmlTraits
         {
@@ -85,7 +85,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
             {
                 base.Init(ve, bag, cc);
-                var line = ve as SkillTreeElement;
+                var line = ve as OldSkillTreeElement;
                 string AsString(UxmlStringAttributeDescription e) => e.GetValueFromBag(bag, cc);
                 line.Init(AsString(_skillTreeAsset));
             }

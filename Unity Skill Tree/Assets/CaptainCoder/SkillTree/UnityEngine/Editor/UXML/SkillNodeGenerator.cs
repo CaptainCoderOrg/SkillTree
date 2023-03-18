@@ -6,13 +6,17 @@ namespace CaptainCoder.SkillTree.UnityEngine
 {
     public class SkillNodeGenerator : IUXMLGenerator<ISkillNode<ISkilledEntity<ISkill>, ISkill>>
     {
+        public static readonly string s_SkillNodeElement = "CaptainCoder.SkillTree.UnityEngine.SkillNodeElement";
         private readonly XmlElement _edgeContainer;
         public SkillNodeGenerator(XmlElement edgeContainer) => _edgeContainer = edgeContainer;
 
         public XmlElement ToXMLElement(ISkillNode<ISkilledEntity<ISkill>, ISkill> toConvert)
-        {
-            XmlElement skillNode = UXML.CreateVisualElement(UXML.SanitizeSkillName(toConvert.Skill));
+        {         
+            XmlElement skillNode = UXML.XML.CreateElement(s_SkillNodeElement);
+            skillNode.SetAttribute("name", UXML.SanitizeSkillName(toConvert.Skill));
             skillNode.SetAttribute("style", $"{UXML.TransparentBackground} {UXML.AbsolutePosition} {ImageStyle(toConvert.Skill.Image)}");
+            skillNode.SetAttribute("display-name", toConvert.Skill.Name);
+            skillNode.SetAttribute("display-description", toConvert.Skill.Description);
             foreach (var child in toConvert.Children)
             {
                 XmlElement lineNode = UXML.CreateLineElement(toConvert.Skill, child.Skill);

@@ -5,14 +5,14 @@ namespace CaptainCoder.SkillTree.UnityEngine
 {
     // For ease of use the Node type aliases our specific renderable type
     // using Node = ISkillNode<ISkilledEntity<IRenderableSkill>, IRenderableSkill>;
-    public class SkillNodeElement : VisualElement
+    public class OldSkillNodeElement : VisualElement
     {
-        public SkillNodeElement()
+        public OldSkillNodeElement()
         {
 
         }
 
-        public SkillNodeElement(ISkill skill) => Init(skill);
+        public OldSkillNodeElement(ISkill skill) => Init(skill);
 
         public void Init(ISkill skill)
         {
@@ -33,7 +33,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
 
         public string SkillAssetPath { get; set; }
 
-        public sealed new class UxmlFactory : UxmlFactory<SkillNodeElement, UxmlTraits> { }
+        public sealed new class UxmlFactory : UxmlFactory<OldSkillNodeElement, UxmlTraits> { }
 
         public sealed new class UxmlTraits : VisualElement.UxmlTraits
         {
@@ -42,7 +42,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
             {
                 base.Init(ve, bag, cc);
-                var line = ve as SkillNodeElement;
+                var line = ve as OldSkillNodeElement;
                 string AsString(UxmlStringAttributeDescription e) => e.GetValueFromBag(bag, cc);
                 line.Init(AsString(_skillAssetPath));
             }
