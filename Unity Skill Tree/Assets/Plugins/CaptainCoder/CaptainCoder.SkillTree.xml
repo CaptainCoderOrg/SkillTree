@@ -24,21 +24,6 @@
         <member name="M:CaptainCoder.SkillTree.HasSkillRequirement`2.MeetsRequirement(`0)">
             <inheritdoc/>
         </member>
-        <member name="T:CaptainCoder.SkillTree.ISkill">
-            <summary>
-            Represents a skill
-            </summary>
-        </member>
-        <member name="P:CaptainCoder.SkillTree.ISkill.Name">
-            <summary>
-            The name of this skill
-            </summary>
-        </member>
-        <member name="P:CaptainCoder.SkillTree.ISkill.Description">
-            <summary>
-            A description of this skill
-            </summary>
-        </member>
         <member name="T:CaptainCoder.SkillTree.ISkilledEntity`1">
             <summary>
             An <see cref="T:CaptainCoder.SkillTree.ISkilledEntity`1"/> represents an entity that can acquire

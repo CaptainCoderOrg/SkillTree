@@ -7,7 +7,8 @@
   <xs:import schemaLocation="UnityEditor.U2D.Animation.Upgrading.xsd" namespace="UnityEditor.U2D.Animation.Upgrading" />
   <xs:import schemaLocation="UnityEditor.U2D.Animation.SpriteLibraryEditor.xsd" namespace="UnityEditor.U2D.Animation.SpriteLibraryEditor" />
   <xs:import schemaLocation="UnityEditor.Tilemaps.xsd" namespace="UnityEditor.Tilemaps" />
-  <xs:import schemaLocation="CaptainCoder.Inventory.UnityEngine.xsd" namespace="CaptainCoder.Inventory.UnityEngine" />
+  <xs:include schemaLocation="GlobalNamespace.xsd" />
+  <xs:import schemaLocation="CaptainCoder.SkillTree.UnityEngine.xsd" namespace="CaptainCoder.SkillTree.UnityEngine" />
   <xs:import schemaLocation="UnityEditor.UIElements.Debugger.xsd" namespace="UnityEditor.UIElements.Debugger" />
   <xs:import schemaLocation="Unity.UI.Builder.xsd" namespace="Unity.UI.Builder" />
   <xs:import schemaLocation="UnityEditor.Search.xsd" namespace="UnityEditor.Search" />

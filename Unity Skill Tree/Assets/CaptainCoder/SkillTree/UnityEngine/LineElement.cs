@@ -15,12 +15,19 @@ public class LineElement : VisualElement
     {
         return new Vector2(element.style.left.value.value, element.style.top.value.value);
     }
+
+    private VisualElement FindRoot(VisualElement current)
+    {
+        if (current.parent == null) return current;
+        return FindRoot(current.parent);
+    }
     
 
     private void OnGenerateVisualContent(MeshGenerationContext mgc)
     {
-        VisualElement start = parent.Q<VisualElement>(StartElement);
-        VisualElement end = parent.Q<VisualElement>(EndElement);
+        var root = FindRoot(this);
+        VisualElement start = root.Q<VisualElement>(StartElement);
+        VisualElement end = root.Q<VisualElement>(EndElement);
         Vector2 startVector = start.layout.center;
         Vector2 endVector = end.layout.center;
         var paint2D = mgc.painter2D;

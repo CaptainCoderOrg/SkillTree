@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CaptainCoder.SkillTree.UnityEngine.Demo
 {
     [CreateAssetMenu(fileName = "Skill", menuName = "Skills")]
-    public class SkillRequirementData : ScriptableObject, IRequirement<IPlayerCharacter, SkillData>
+    public class SkillRequirementData : ScriptableObject, IRequirement<IPlayerCharacter, SkillData>, IRequirement<ISkilledEntity<ISkill>, ISkill>
     {
         [field: SerializeField]
         public string Name { get; private set; }
@@ -14,6 +14,12 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
         public string Description { get; private set; }
 
         public virtual bool MeetsRequirement(IPlayerCharacter entity)
+        {
+            // ISkilledEntity<ISkill> test = entity;
+            throw new System.NotImplementedException();
+        }
+
+        bool IRequirement<ISkilledEntity<ISkill>, ISkill>.MeetsRequirement(ISkilledEntity<ISkill> entity)
         {
             throw new System.NotImplementedException();
         }

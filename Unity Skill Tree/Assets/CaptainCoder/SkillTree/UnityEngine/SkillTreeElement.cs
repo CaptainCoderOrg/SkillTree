@@ -3,39 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
+using System.Linq;
 
 namespace CaptainCoder.SkillTree.UnityEngine
 {
     // For ease of use the Node type aliases our specific renderable type
-    using Node = ISkillNode<ISkilledEntity<IRenderableSkill>, IRenderableSkill>;
-    using SkillTreeData = SkillTreeData<ISkilledEntity<IRenderableSkill>, IRenderableSkill>;
+    using Node = ISkillNode<ISkilledEntity<ISkill>, ISkill>;
+    // using SkillTreeData = SkillTreeData<ISkilledEntity<ISkill>, ISkill>;
 
     public class SkillTreeElement : VisualElement
     {
-
+        private ISkillTree<ISkilledEntity<ISkill>, ISkill> _skills;
         public SkillTreeElement()
         {
+            generateVisualContent += OnGenerateVisualContent;
+        }
+        private void OnGenerateVisualContent(MeshGenerationContext mgc)
+        {
+            VisualElement anchors = parent?.Q<VisualElement>("Anchors");
+            if (anchors == null) { return; }
+            var nodes = GetImagesContainer().Children().Where(c => c is SkillNodeElement).Select(c => c as SkillNodeElement);
+            foreach (SkillNodeElement node in nodes)
+            {
+                VisualElement anchor = anchors.Q<VisualElement>(node.Skill.Name.Replace(" ",""));
+                if (anchor != null)
+                {
+                    anchor.style.width = node.layout.width;
+                    anchor.style.height = node.layout.height;
+                    node.style.left = anchor.layout.x;
+                    node.style.top = anchor.layout.y;
+                }
+            }
 
         }
 
-        public void Generate(ISkillTree<ISkilledEntity<IRenderableSkill>, IRenderableSkill> skillTree)
+
+        public void Generate(ISkillTree<ISkilledEntity<ISkill>, ISkill> skillTree)
         {
+            VisualElement images = GetImagesContainer();
+            images.Clear();
             foreach (Node node in skillTree.Nodes)
             {
-                SkillNodeElement nodeElement = new (node.Skill);
-                Add(nodeElement);
-            }        
+                SkillNodeElement nodeElement = new(node.Skill);
+                images.Add(nodeElement);
+            }
+            _skills = skillTree;
+        }
+
+        private VisualElement GetImagesContainer()
+        {
+            VisualElement images = this.Q<VisualElement>("NodeImages");
+            if (images == null)
+            {
+                images = new VisualElement { name = "NodeImages" };
+                images.style.position = Position.Absolute;
+                images.style.width = new StyleLength(new Length(100, LengthUnit.Percent));
+                images.style.height = new StyleLength(new Length(100, LengthUnit.Percent));
+                Add(images);
+            }
+            return images;
         }
 
         public void Init(string skillTreeAsset)
         {
             SkillTreeAsset = skillTreeAsset;
-            ScriptableObject data = AssetDatabase.LoadAssetAtPath<ScriptableObject>("Assets/Demo/Skill Tree/Paladin Skill Tree.asset");
-            SkillTreeData<ISkilledEntity<IRenderableSkill>, IRenderableSkill> skillTree = data as SkillTreeData;
-            Debug.Log(data);
-            Debug.Log(skillTree);
-        }
 
+            ScriptableSkillTree data = AssetDatabase.LoadAssetAtPath<ScriptableSkillTree>(skillTreeAsset);
+            if (data == null) { return; }
+
+            Generate(data.SkillTree);
+        }
 
         public string SkillTreeAsset { get; set; }
 
