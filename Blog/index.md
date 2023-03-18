@@ -55,4 +55,15 @@ API to automatically connect nodes in the Skill Tree together.
 * [Read More]({% link pages/03-day-3.md %})
 * [Watch On YouTube](https://youtube.com/live/ow5piavuQaI)
 
+# Day 4: UI Generation: Version 0
+
+Today, we defined ScriptableObjects which can be used to specify a skill tree.
+Then, we attempted to write a tool to automagically generate a UI based on a
+skill tree. Unfortunately, we discovered that the desired behavior may not be
+possible using a subclass of the `VisualElement` class. Off stream, the Captain
+explored generating UXML which does have the intended behavior.
+
+* [Read More]({% link pages/04-day-4.md %})
+* [Watch On YouTube](https://youtube.com/live/dTeCOarDBMA)
+
 {% include Links.md %}
