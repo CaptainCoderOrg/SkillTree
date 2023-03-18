@@ -20,7 +20,5 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
         public int RequiredSkillPoints { get; private set; } = 1;
         [field: SerializeField]
         public List<SkillRequirementData> Requirements { get; private set; }
-
-        // IEnumerable<IRequirement<ISkilledEntity<ISkill>, ISkill>> ISkill.Requirements => Requirements.AsEnumerable();
     }
 }

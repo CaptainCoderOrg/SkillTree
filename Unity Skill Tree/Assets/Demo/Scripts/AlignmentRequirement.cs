@@ -9,7 +9,6 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
     {
         [field: SerializeField]
         public List<Alignment> Alignments { get; private set; }
-
         public override bool MeetsRequirement(IPlayerCharacter entity) => Alignments.Contains(entity.Alignment);
     }
 }

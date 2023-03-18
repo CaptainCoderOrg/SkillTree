@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace CaptainCoder.SkillTree.UnityEngine.Demo
 {
-    [CreateAssetMenu(fileName = "Skill", menuName = "Skills")]
     public class SkillRequirementData : ScriptableObject, IRequirement<IPlayerCharacter, SkillData>, IRequirement<ISkilledEntity<ISkill>, ISkill>
     {
         [field: SerializeField]

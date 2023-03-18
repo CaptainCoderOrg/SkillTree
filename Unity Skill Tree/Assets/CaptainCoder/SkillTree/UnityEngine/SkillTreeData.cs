@@ -10,9 +10,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
         public S Root { get; private set; }
         [field: SerializeField]
         public List<Edge> Edges { get; private set; }
-
         public bool GenerateUXML;
-
         public override ISkillTree<ISkilledEntity<ISkill>, ISkill> SkillTree
         {
             get
@@ -52,7 +50,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
         {
             if (!GenerateUXML) { return; }
             SkillTreeGenerator generator = new ();
-            string uxml = generator.ToUXMLElement(this);
+            string uxml = generator.ToUXMLDocString(this);
             string treeDataPath = AssetDatabase.GetAssetPath(this);
             // st
             List<string> components = treeDataPath.Split("/").ToList();
@@ -74,6 +72,4 @@ namespace CaptainCoder.SkillTree.UnityEngine
             public S Child { get; private set; }
         }
     }
-
-
 }
