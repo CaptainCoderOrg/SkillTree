@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
+using System.IO;
 #endif
 
 using System.Collections.Generic;
@@ -49,24 +50,31 @@ namespace CaptainCoder.SkillTree.UnityEngine
             return builder.Build();
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         void OnValidate()
         {
             if (!GenerateUXML) { return; }
-            SkillTreeGenerator generator = new ();
-            string uxml = generator.ToUXMLDocString(this);
+
             string treeDataPath = AssetDatabase.GetAssetPath(this);
-            // st
             List<string> components = treeDataPath.Split("/").ToList();
-            components.RemoveAt(components.Count-1);
+            components.RemoveAt(components.Count - 1);
             string path = $"{string.Join("/", components)}/{Name}.uxml";
-            Debug.Log(path);
-            System.IO.File.WriteAllText(path, uxml);
+
+            SkillTreeDeserializer deserializer = SkillTreeDeserializer.Default;
+
+            ISkillTreeMetaData metaData =
+                File.Exists(path) ?
+                deserializer.ParseMetaData(path) :
+                ISkillTreeMetaData.Default;
+
+            SkillTreeGenerator generator = new(metaData);
+            string uxml = generator.ToUXMLDocString(this);
+            File.WriteAllText(path, uxml);
             AssetDatabase.Refresh();
-            
+
             GenerateUXML = false;
         }
-        #endif
+#endif
 
         [System.Serializable]
         public class Edge

@@ -3,6 +3,6 @@
     <ui:Template name="Paladin Skill Tree" src="project://database/Assets/Demo/Skill%20Tree/Paladin%20Skill%20Tree.uxml?fileID=9197481963319205126&amp;guid=8aa6c9ab130c689429436e64cb9e2d49&amp;type=3#Paladin Skill Tree" />
     <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
         <ui:Instance template="Skill Information" name="SkillInfo" style="flex-basis: 50%;" />
-        <ui:Instance template="Paladin Skill Tree" name="Paladin Skill Tree" style="flex-basis: 50%;" />
+        <ui:Instance template="Paladin Skill Tree" name="Paladin Skill Tree" />
     </ui:VisualElement>
 </ui:UXML>

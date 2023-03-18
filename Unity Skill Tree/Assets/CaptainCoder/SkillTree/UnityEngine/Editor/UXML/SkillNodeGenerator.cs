@@ -7,14 +7,16 @@ namespace CaptainCoder.SkillTree.UnityEngine
     public class SkillNodeGenerator : IUXMLGenerator<ISkillNode<ISkilledEntity<ISkill>, ISkill>>
     {
         public static readonly string s_SkillNodeElement = "CaptainCoder.SkillTree.UnityEngine.SkillNodeElement";
+        private readonly ISkillTreeMetaData _metaData;
         private readonly XmlElement _edgeContainer;
-        public SkillNodeGenerator(XmlElement edgeContainer) => _edgeContainer = edgeContainer;
+        public SkillNodeGenerator(ISkillTreeMetaData metaData, XmlElement edgeContainer) 
+            => (_metaData, _edgeContainer) = (metaData, edgeContainer);
 
         public XmlElement ToXMLElement(ISkillNode<ISkilledEntity<ISkill>, ISkill> toConvert)
         {         
             XmlElement skillNode = UXML.XML.CreateElement(s_SkillNodeElement);
             skillNode.SetAttribute("name", UXML.SanitizeSkillName(toConvert.Skill));
-            skillNode.SetAttribute("style", $"{UXML.TransparentBackground} {UXML.AbsolutePosition} {ImageStyle(toConvert.Skill.Image)}");
+            skillNode.SetAttribute("style", Style(toConvert.Skill));
             skillNode.SetAttribute("display-name", toConvert.Skill.Name);
             skillNode.SetAttribute("display-description", toConvert.Skill.Description);
             foreach (var child in toConvert.Children)
@@ -23,6 +25,19 @@ namespace CaptainCoder.SkillTree.UnityEngine
                 _edgeContainer.AppendChild(lineNode);
             }     
             return skillNode;
+        }
+
+        private string Style(ISkill skill)
+        {
+            Vector2 position = _metaData.PositionOf(UXML.SanitizeSkillName(skill));
+            string[] styles = {
+                UXML.TransparentBackground,
+                UXML.AbsolutePosition,
+                ImageStyle(skill.Image),
+                $"left: {position.x}px;",
+                $"top: {position.y}px;",
+            };
+            return string.Join(" ", styles);
         }
 
         private string ImageStyle(Sprite sprite) 

@@ -6,6 +6,8 @@ namespace CaptainCoder.SkillTree.UnityEngine
 {
     public class SkillTreeGenerator : IUXMLGenerator<ScriptableSkillTree>
     {
+        private readonly ISkillTreeMetaData _metaData;
+        public SkillTreeGenerator(ISkillTreeMetaData metaData) => _metaData = metaData;
         public XmlElement ToXMLElement(ScriptableSkillTree toConvert)
         {
             XmlElement el = UXML.CreateContainer("SkillTree");
@@ -16,7 +18,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
             XmlElement nodes = UXML.CreateContainer("Nodes");
             el.AppendChild(nodes);
 
-            SkillNodeGenerator generator = new(edges);
+            SkillNodeGenerator generator = new(_metaData, edges);
             foreach (var node in toConvert.SkillTree.Nodes)
             {
                 nodes.AppendChild(generator.ToXMLElement(node));
