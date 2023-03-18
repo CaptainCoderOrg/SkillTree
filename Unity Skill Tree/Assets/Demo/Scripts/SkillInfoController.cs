@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,7 +7,6 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
     {
         [field: SerializeField]
         public UIDocument SkillLayout { get; private set; }
-
         private Label _skillName;
         private Label _skillDescription;
 
