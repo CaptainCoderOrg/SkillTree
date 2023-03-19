@@ -66,4 +66,15 @@ explored generating UXML which does have the intended behavior.
 * [Read More]({% link pages/04-day-4.md %})
 * [Watch On YouTube](https://youtube.com/live/dTeCOarDBMA)
 
+# Day 5: UXML Serialization
+
+Today, we implemented UXML Generators for our SkillTree and
+SkillNodes. Additionally, we updated the Skill Nodes to be
+intractable. Lastly, for convenience, we updated the UXML
+generators to be aware of position changes by deserializing
+the existing UXML prior to regeneration.
+
+* [Read More]({% link pages/05-day-5.md %})
+* [Watch On YouTube](https://youtube.com/live/Ge3wrgNvTMA?feature=share)
+
 {% include Links.md %}
