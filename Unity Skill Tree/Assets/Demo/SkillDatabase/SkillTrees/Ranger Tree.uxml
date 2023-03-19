@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="SkillTree" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;">
+    <ui:VisualElement name="Edges" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;">
+      <LineElement name="Hero -&gt; DivineSense" start-element="Hero" end-element="DivineSense" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
+      <LineElement name="Hero -&gt; LayHands" start-element="Hero" end-element="LayHands" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
+      <LineElement name="LayHands -&gt; SpellCasting" start-element="LayHands" end-element="SpellCasting" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Nodes" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;">
+      <CaptainCoder.SkillTree.UnityEngine.SkillNodeElement name="Hero" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/hero-node.png?fileID=21300000&amp;guid=03e10783b8cbcce42af2a3ec24fd51c2&amp;type=3#hero-node'); left: 227px; top: 314px;" display-name="Hero" display-description="You is a hero!" />
+      <CaptainCoder.SkillTree.UnityEngine.SkillNodeElement name="DivineSense" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/divine-sense-node.png?fileID=21300000&amp;guid=5a9d619752c79724eb157cfd10f38225&amp;type=3#divine-sense-node'); left: 222px; top: 26px;" display-name="Divine Sense" display-description="You can sense the divine" />
+      <CaptainCoder.SkillTree.UnityEngine.SkillNodeElement name="LayHands" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/layhands-node.png?fileID=21300000&amp;guid=442d875d3891cfa4c9ba9d681fc22570&amp;type=3#layhands-node'); left: 4px; top: 172px;" display-name="Lay Hands" display-description="You can fully heal yourself or another once every 3 days." />
+      <CaptainCoder.SkillTree.UnityEngine.SkillNodeElement name="SpellCasting" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/spell-casting-node.png?fileID=21300000&amp;guid=62112b66ef156604f8edf72aa17e2abe&amp;type=3#spell-casting-node'); left: 0px; top: 0px;" display-name="Spell Casting" display-description="You have learned how to wield magic!" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

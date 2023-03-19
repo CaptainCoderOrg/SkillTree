@@ -6,6 +6,8 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
     public class SkillInfoController : MonoBehaviour
     {
         [field: SerializeField]
+        public SkillDatabase Database { get; private set; }
+        [field: SerializeField]
         public UIDocument SkillLayout { get; private set; }
         private Label _skillName;
         private Label _skillDescription;
@@ -35,8 +37,9 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
 
         private void OnSelect(SkillNodeElement selected)
         {
-            _skillName.text = selected.DisplayName;
-            _skillDescription.text = selected.DisplayDescription;
+            ISkill skill = Database.LookupSkill(selected.SkillGuid);
+            _skillName.text = skill.Name;
+            _skillDescription.text = skill.Description;
         }
     }
 }

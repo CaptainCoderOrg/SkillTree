@@ -37,7 +37,6 @@ namespace CaptainCoder.SkillTree.UnityEngine
                 int x = leftMatch.Success ? ExtractInt(leftMatch) : 0;
                 int y = topMatch.Success ? ExtractInt(topMatch) : 0;
                 accumulator._positions[name] = new Vector2(x, y);
-                Debug.Log($"{name}: {x} {y}");
             }
         }
 

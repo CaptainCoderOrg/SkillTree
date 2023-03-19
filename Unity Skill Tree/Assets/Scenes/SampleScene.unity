@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71155eb98e0a28f4eb9648e470ebb739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Database>k__BackingField: {fileID: 11400000, guid: 2155c7568be607640991d1e2f2f5f90a, type: 2}
   <SkillLayout>k__BackingField: {fileID: 1526878803}
 --- !u!1 &2099468054
 GameObject:

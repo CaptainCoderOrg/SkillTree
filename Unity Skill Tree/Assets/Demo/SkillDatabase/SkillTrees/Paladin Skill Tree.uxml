@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="SkillTree" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;" skill-tree-guid="63fdad01-653b-478c-98c6-a19264f00a3d">
+    <ui:VisualElement name="Edges" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;">
+      <LineElement name="Hero -&gt; SpellCasting" start-element="Hero" end-element="SpellCasting" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
+      <LineElement name="SpellCasting -&gt; DivineSense" start-element="SpellCasting" end-element="DivineSense" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
+      <LineElement name="DivineSense -&gt; SacredOath" start-element="DivineSense" end-element="SacredOath" style="background-color: rgba(0, 0, 0, 0); position: absolute;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Nodes" style="background-color: rgba(0, 0, 0, 0); width:100%; height:100%; position: absolute;">
+      <CaptainCoder.SkillTree.UnityEngine.SkillNodeElement name="Hero" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/hero-node.png?fileID=21300000&amp;guid=03e10783b8cbcce42af2a3ec24fd51c2&amp;type=3#hero-node'); left: 208px; top: 311px;" skill-guid="17147046-ecfc-48b3-8b66-b530d3344ad0" skill-tree-guid="63fdad01-653b-478c-98c6-a19264f00a3d" />
+      <CaptainCoder.SkillTree.UnityEngine.SkillNodeElement name="SpellCasting" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/spell-casting-node.png?fileID=21300000&amp;guid=62112b66ef156604f8edf72aa17e2abe&amp;type=3#spell-casting-node'); left: 207px; top: 166px;" skill-guid="1fe7ad8c-982e-44f7-8038-aedeb3c55d14" skill-tree-guid="63fdad01-653b-478c-98c6-a19264f00a3d" />
+      <CaptainCoder.SkillTree.UnityEngine.SkillNodeElement name="DivineSense" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/divine-sense-node.png?fileID=21300000&amp;guid=5a9d619752c79724eb157cfd10f38225&amp;type=3#divine-sense-node'); left: 0px; top: 154px;" skill-guid="7010322f-ac52-4e7d-907a-1f2f350d3859" skill-tree-guid="63fdad01-653b-478c-98c6-a19264f00a3d" />
+      <CaptainCoder.SkillTree.UnityEngine.SkillNodeElement name="SacredOath" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 128px; height: 128px; background-image: url('project://database/Assets/Sprites/sacred-oath-node.png?fileID=21300000&amp;guid=8e4085567988f3442ae02ad8782c3d66&amp;type=3#sacred-oath-node'); left: 0px; top: 0px;" skill-guid="4fa45f1c-c1d7-4826-8267-b33aaf5ba361" skill-tree-guid="63fdad01-653b-478c-98c6-a19264f00a3d" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

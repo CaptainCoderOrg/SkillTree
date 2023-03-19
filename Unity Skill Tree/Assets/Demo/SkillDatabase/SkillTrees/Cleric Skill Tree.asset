@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b3a065187a54d4fa41df438e86d0b3, type: 3}
+  m_Name: Cleric Skill Tree
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Ranger Tree
+  <Root>k__BackingField: {fileID: 11400000, guid: 3a3eb8896a254704aa8936af41973bb0, type: 2}
+  <Edges>k__BackingField:
+  - <Parent>k__BackingField: {fileID: 11400000, guid: 3a3eb8896a254704aa8936af41973bb0, type: 2}
+    <Child>k__BackingField: {fileID: 11400000, guid: a54b5cbf38baafa4f912d6f2b6d747ab, type: 2}
+  - <Parent>k__BackingField: {fileID: 11400000, guid: 3a3eb8896a254704aa8936af41973bb0, type: 2}
+    <Child>k__BackingField: {fileID: 11400000, guid: 9ead3eeb1e50e6f4f9549b60c13321c3, type: 2}
+  - <Parent>k__BackingField: {fileID: 11400000, guid: 9ead3eeb1e50e6f4f9549b60c13321c3, type: 2}
+    <Child>k__BackingField: {fileID: 11400000, guid: 8db6d39f6d852384fb785ebb82bc7baa, type: 2}
+  GenerateUXML: 0

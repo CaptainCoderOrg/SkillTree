@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,8 +7,11 @@ using UnityEngine;
 namespace CaptainCoder.SkillTree.UnityEngine.Demo
 {
     [CreateAssetMenu(fileName = "Skill", menuName = "Skills/Skill")]
-    public class SkillData : ScriptableObject, ISkill, IHasRequirements<IPlayerCharacter, SkillData>
+    [System.Serializable]
+    public class SkillData : ScriptableObject, ISkill, IHasRequirements<IPlayerCharacter, SkillData>, ISerializationCallbackReceiver
     {
+        [field: SerializeField]
+        public string GUID { get; private set; }
         [field: SerializeField]
         public string Name { get; private set; }
         [field: SerializeField]
@@ -20,5 +24,20 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
         public int RequiredSkillPoints { get; private set; } = 1;
         [field: SerializeField]
         public List<SkillRequirementData> Requirements { get; private set; }
+
+        public void OnAfterDeserialize()
+        {
+            // throw new System.NotImplementedException();
+            
+        }
+
+        public void OnBeforeSerialize()
+        {
+            // throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(GUID?.Trim()))
+            {
+                GUID = Guid.NewGuid().ToString();
+            }
+        }
     }
 }

@@ -20,26 +20,24 @@ namespace CaptainCoder.SkillTree.UnityEngine
         private void OnPointerEnter(PointerEnterEvent evt) => OnPointerEntered?.Invoke(this);
         private void OnPointerDown(PointerDownEvent evt) => OnClicked?.Invoke(this);
 
-        private void Init(string name, string description) => (DisplayName, DisplayDescription) = (name, description);
-
-        public string DisplayName { get; set; }
-        public string DisplayDescription { get; set; }
+        private void Init(string guid, string treeGuid) => (SkillGuid, SkillTreeGuid) = (guid, treeGuid);
+        public string SkillGuid { get; set; }
+        public string SkillTreeGuid { get; set; }
 
         public sealed new class UxmlFactory : UxmlFactory<SkillNodeElement, UxmlTraits> { }
 
         public sealed new class UxmlTraits : VisualElement.UxmlTraits
         {
-            UxmlStringAttributeDescription _displayName = new() { name = "display-name", defaultValue = string.Empty };
-            UxmlStringAttributeDescription _displayDescription = new() { name = "display-description", defaultValue = string.Empty };
+            UxmlStringAttributeDescription _guid = new() { name = "skill-guid", defaultValue = string.Empty };
+            UxmlStringAttributeDescription _skillTreeGuid = new() { name = "skill-tree-guid", defaultValue = string.Empty };
 
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
             {
                 base.Init(ve, bag, cc);
                 var skillNode = ve as SkillNodeElement;
                 string AsString(UxmlStringAttributeDescription e) => e.GetValueFromBag(bag, cc);
-                skillNode.Init(AsString(_displayName), AsString(_displayDescription));
+                skillNode.Init(AsString(_guid), AsString(_skillTreeGuid));
             }
         }
-
     }
 }

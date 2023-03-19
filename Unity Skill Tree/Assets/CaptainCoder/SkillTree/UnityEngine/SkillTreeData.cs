@@ -8,7 +8,9 @@ using UnityEngine;
 using System.Linq;
 namespace CaptainCoder.SkillTree.UnityEngine
 {
-    public class SkillTreeData<E, S> : ScriptableSkillTree where E : ISkilledEntity<S> where S : ISkill, IHasRequirements<E, S>
+    public class SkillTreeData<E, S> : ScriptableSkillTree
+            where E : ISkilledEntity<S>
+            where S : ISkill, IHasRequirements<E, S>
     {
         [field: SerializeField]
         public S Root { get; private set; }
