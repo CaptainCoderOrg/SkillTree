@@ -23,7 +23,20 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
         [field: SerializeField]
         public int RequiredSkillPoints { get; private set; } = 1;
         [field: SerializeField]
-        public List<SkillRequirementData> Requirements { get; private set; }
+        public List<SkillRequirementData> AdditionalRequirements { get; private set; }
+        
+        public IEnumerable<IRequirement<IPlayerCharacter, SkillData>> Requirements 
+        {
+            get
+            {
+                List<IRequirement<IPlayerCharacter, SkillData>> requirements = 
+                    AdditionalRequirements.Select(c => (IRequirement<IPlayerCharacter, SkillData>)c).ToList();
+
+                requirements.Add(new LevelRequirement(RequiredLevel));
+                requirements.Add(new CostRequirement(RequiredSkillPoints));
+                return requirements;
+            }
+        }
 
         public void OnAfterDeserialize()
         {

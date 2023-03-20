@@ -14,7 +14,6 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
 
         public virtual bool MeetsRequirement(IPlayerCharacter entity)
         {
-            // ISkilledEntity<ISkill> test = entity;
             throw new System.NotImplementedException();
         }
 
