@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787ed2392cd27bc49acc7a876c7570e3, type: 3}
   m_Name: Hero
   m_EditorClassIdentifier: 
+  <GUID>k__BackingField: hero-12345
   <Name>k__BackingField: Hero
   <Description>k__BackingField: You is a hero!
   <Image>k__BackingField: {fileID: 21300000, guid: 03e10783b8cbcce42af2a3ec24fd51c2, type: 3}
   <RequiredLevel>k__BackingField: 1
   <RequiredSkillPoints>k__BackingField: 1
-  <Requirements>k__BackingField: []
+  <AdditionalRequirements>k__BackingField: []

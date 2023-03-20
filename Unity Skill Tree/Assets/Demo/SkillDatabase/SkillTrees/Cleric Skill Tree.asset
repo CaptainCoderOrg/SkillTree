@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b3a065187a54d4fa41df438e86d0b3, type: 3}
   m_Name: Cleric Skill Tree
   m_EditorClassIdentifier: 
+  <GUID>k__BackingField: cleric-skill-tree
   <Name>k__BackingField: Ranger Tree
   <Root>k__BackingField: {fileID: 11400000, guid: 3a3eb8896a254704aa8936af41973bb0, type: 2}
   <Edges>k__BackingField:

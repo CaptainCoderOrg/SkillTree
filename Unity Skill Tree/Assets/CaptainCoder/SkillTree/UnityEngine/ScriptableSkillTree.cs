@@ -16,6 +16,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
             // throw new System.NotImplementedException();
             if (string.IsNullOrEmpty(GUID?.Trim()))
             {
+                Debug.Log("Generating GUID for ScriptableSkillTree", this);
                 GUID = System.Guid.NewGuid().ToString();
             }
         }

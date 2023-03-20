@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787ed2392cd27bc49acc7a876c7570e3, type: 3}
   m_Name: Spell Casting
   m_EditorClassIdentifier: 
+  <GUID>k__BackingField: 829d5ed9-14ad-4f9c-a85a-66d1a39de704
   <Name>k__BackingField: Spell Casting
   <Description>k__BackingField: You have learned how to wield magic!
   <Image>k__BackingField: {fileID: 21300000, guid: 62112b66ef156604f8edf72aa17e2abe, type: 3}
   <RequiredLevel>k__BackingField: 1
   <RequiredSkillPoints>k__BackingField: 1
-  <Requirements>k__BackingField: []
+  <AdditionalRequirements>k__BackingField: []

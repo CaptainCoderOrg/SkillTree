@@ -18,15 +18,14 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
         private List<GameSkillTreeData> _skillTrees;
         public ISkill LookupSkill(string guid) => SkillLookup[guid];
         public GameSkillTreeData LookupTree(string guid) => SkillTreeDatabase[guid];
-        private void OnEnable()
-        {
+
+        private void OnEnable() {
             InitializeSkills();
             InitializeSkillTrees();
         }
 
         private Dictionary<string, GameSkillTreeData> InitializeSkillTrees()
         {
-            if (_skillTreeLookup != null) { return _skillTreeLookup; }
             _skillTreeLookup = new Dictionary<string, GameSkillTreeData>();
             foreach (GameSkillTreeData tree in _skillTrees)
             {
@@ -46,7 +45,6 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
 
         private Dictionary<string, SkillData> InitializeSkills()
         {
-            if (_skillLookup != null) { return _skillLookup; }
             _skillLookup = new Dictionary<string, SkillData>();
             foreach (SkillData skill in _skills)
             {

@@ -49,6 +49,7 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
             // throw new System.NotImplementedException();
             if (string.IsNullOrEmpty(GUID?.Trim()))
             {
+                Debug.Log($"Generating GUID for {Name}", this);
                 GUID = Guid.NewGuid().ToString();
             }
         }
