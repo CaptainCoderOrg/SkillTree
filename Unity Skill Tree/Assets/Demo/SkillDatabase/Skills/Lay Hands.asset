@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787ed2392cd27bc49acc7a876c7570e3, type: 3}
   m_Name: Lay Hands
   m_EditorClassIdentifier: 
-  <GUID>k__BackingField: layhands-12345
+  <GUID>k__BackingField: 7de8f8a6-9222-4bdc-b916-d1319ed0fa09
   <Name>k__BackingField: Lay Hands
   <Description>k__BackingField: You can fully heal yourself or another once every
     3 days.

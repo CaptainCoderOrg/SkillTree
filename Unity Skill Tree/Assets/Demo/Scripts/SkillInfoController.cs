@@ -54,8 +54,7 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
 
         private void BuySkill()
         {
-            Debug.Log($"Purchased: {_selectedNode.Skill.Name}");
-            Player.AcquiredSkills.Add(_selectedNode.Skill);
+            Player.AcquireSkill(_selectedNode);
         }
     }
 }

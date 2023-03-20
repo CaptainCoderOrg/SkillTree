@@ -38,6 +38,11 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
             }
         }
 
+        public void Reset()
+        {
+            GenerateGUID();
+        }
+
         public void OnAfterDeserialize()
         {
             // throw new System.NotImplementedException();
@@ -49,9 +54,14 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
             // throw new System.NotImplementedException();
             if (string.IsNullOrEmpty(GUID?.Trim()))
             {
-                Debug.Log($"Generating GUID for {Name}", this);
-                GUID = Guid.NewGuid().ToString();
+                GenerateGUID();
             }
+        }
+
+        private void GenerateGUID()
+        {
+            Debug.Log($"Generating GUID for {Name}", this);
+            GUID = Guid.NewGuid().ToString();
         }
     }
 }
