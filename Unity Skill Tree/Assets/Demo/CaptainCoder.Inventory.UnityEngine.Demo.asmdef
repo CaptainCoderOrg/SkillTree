@@ -9,7 +9,8 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "CaptainCoder.SkillTree.dll"
+        "CaptainCoder.SkillTree.dll",
+        "CaptainCoder.Core.UnityEngine.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

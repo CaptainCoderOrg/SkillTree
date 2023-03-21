@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CaptainCoder.Core.UnityEngine</name>
+    </assembly>
+    <members>
+        <member name="T:CaptainCoder.Core.UnityEngine.IHasGuid">
+            <summary>
+            The <see cref="T:CaptainCoder.Core.UnityEngine.IHasGuid"/> interface provides a single string property
+            representing a unique id. By default, this interface provides an
+            implementation of <see cref="T:UnityEngine.ISerializationCallbackReceiver"/> that will
+            automatically generate a Guid on serialization if one has not been
+            specified.
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.Core.UnityEngine.IHasGuid.Guid">
+            <summary>
+            Represents a unique string identifier
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.UnityEngine.IHasGuid.RegenerateGuid">
+            <summary>
+            Regenerates the Guid for this object
+            </summary>
+        </member>
+    </members>
+</doc>

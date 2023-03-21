@@ -18,10 +18,8 @@ namespace CaptainCoder.SkillTree.UnityEngine
             XmlElement skillNode = UXML.XML.CreateElement(s_SkillNodeElement);
             skillNode.SetAttribute("name", UXML.SanitizeSkillName(toConvert.Skill));
             skillNode.SetAttribute("style", Style(toConvert.Skill));
-            skillNode.SetAttribute("skill-guid", toConvert.Skill.GUID);
+            skillNode.SetAttribute("skill-guid", toConvert.Skill.Guid);
             skillNode.SetAttribute("skill-tree-guid", _skillTreeGuid);
-            // skillNode.SetAttribute("display-name", toConvert.Skill.Name);
-            // skillNode.SetAttribute("display-description", toConvert.Skill.Description);
             foreach (var child in toConvert.Children)
             {
                 XmlElement lineNode = UXML.CreateLineElement(toConvert.Skill, child.Skill);

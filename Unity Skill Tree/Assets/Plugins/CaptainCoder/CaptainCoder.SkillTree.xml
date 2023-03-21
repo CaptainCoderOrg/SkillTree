@@ -24,6 +24,17 @@
         <member name="M:CaptainCoder.SkillTree.HasSkillRequirement`2.MeetsRequirement(`0)">
             <inheritdoc/>
         </member>
+        <member name="T:CaptainCoder.SkillTree.IRequirement`2">
+            <summary>
+            A Requirement acts as a predicate on a character.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.SkillTree.IRequirement`2.MeetsRequirement(`0)">
+            <summary>
+            Checks if the specified <paramref name="entity"/> meets this
+            requirement.
+            </summary>
+        </member>
         <member name="T:CaptainCoder.SkillTree.ISkilledEntity`1">
             <summary>
             An <see cref="T:CaptainCoder.SkillTree.ISkilledEntity`1"/> represents an entity that can acquire
@@ -61,17 +72,6 @@
             <summary>
             Checks if the specified <paramref name="entity"/> meets the
             requirements to acquire this skill.
-            </summary>
-        </member>
-        <member name="T:CaptainCoder.SkillTree.IRequirement`2">
-            <summary>
-            A Requirement acts as a predicate on a character.
-            </summary>
-        </member>
-        <member name="M:CaptainCoder.SkillTree.IRequirement`2.MeetsRequirement(`0)">
-            <summary>
-            Checks if the specified <paramref name="entity"/> meets this
-            requirement.
             </summary>
         </member>
         <member name="T:CaptainCoder.SkillTree.ISkillTree`2">

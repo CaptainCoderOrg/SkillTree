@@ -1,17 +1,17 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using CaptainCoder.Core.UnityEngine;
 using UnityEngine;
 
 namespace CaptainCoder.SkillTree.UnityEngine.Demo
 {
     [CreateAssetMenu(fileName = "Skill", menuName = "Skills/Skill")]
     [System.Serializable]
-    public class SkillData : ScriptableObject, ISkill, IHasRequirements<IPlayerCharacter, SkillData>, ISerializationCallbackReceiver
+    public class SkillData : ScriptableObject, ISkill, IHasRequirements<IPlayerCharacter, SkillData>
     {
         [field: SerializeField]
         public string GUID { get; private set; }
+        string IHasGuid.Guid { get => GUID; set => GUID = value; }
         [field: SerializeField]
         public string Name { get; private set; }
         [field: SerializeField]
@@ -40,28 +40,7 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
 
         public void Reset()
         {
-            GenerateGUID();
-        }
-
-        public void OnAfterDeserialize()
-        {
-            // throw new System.NotImplementedException();
-            
-        }
-
-        public void OnBeforeSerialize()
-        {
-            // throw new System.NotImplementedException();
-            if (string.IsNullOrEmpty(GUID?.Trim()))
-            {
-                GenerateGUID();
-            }
-        }
-
-        private void GenerateGUID()
-        {
-            Debug.Log($"Generating GUID for {Name}", this);
-            GUID = Guid.NewGuid().ToString();
-        }
+            (this as IHasGuid).RegenerateGuid();
+        }        
     }
 }

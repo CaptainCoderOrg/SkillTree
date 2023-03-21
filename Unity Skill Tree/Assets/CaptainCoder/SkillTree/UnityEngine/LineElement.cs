@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -55,9 +53,6 @@ public class LineElement : VisualElement
     {
         UxmlStringAttributeDescription _startElement = new() { name = "start-element", defaultValue = string.Empty };
         UxmlStringAttributeDescription _endElement = new() { name = "end-element", defaultValue = string.Empty };
-        // UxmlIntAttributeDescription _columns = new() { name = "columns", defaultValue = 10 };
-        // UxmlIntAttributeDescription _rows = new() { name = "rows", defaultValue = 4 };
-        // UxmlIntAttributeDescription _cellSize = new() { name = "cell-size", defaultValue = 32 };
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {

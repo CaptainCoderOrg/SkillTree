@@ -1,29 +1,15 @@
-using CaptainCoder.SkillTree;
+using CaptainCoder.Core.UnityEngine;
 using UnityEngine;
 
 namespace CaptainCoder.SkillTree.UnityEngine
 {
-    public class ScriptableSkillTree : ScriptableObject, ISerializationCallbackReceiver
+    public class ScriptableSkillTree : ScriptableObject, IHasGuid
     {
         [field: SerializeField]
         public string GUID { get; private set; }
         [field: SerializeField]
         public string Name { get; private set; }
         public virtual ISkillTree<ISkilledEntity<ISkill>, ISkill> SkillTree => throw new System.NotImplementedException("SkillTree property must be overridden in subclass");
-
-        public void OnBeforeSerialize()
-        {
-            // throw new System.NotImplementedException();
-            if (string.IsNullOrEmpty(GUID?.Trim()))
-            {
-                Debug.Log("Generating GUID for ScriptableSkillTree", this);
-                GUID = System.Guid.NewGuid().ToString();
-            }
-        }
-
-        public void OnAfterDeserialize()
-        {
-
-        }
+        string IHasGuid.Guid { get => GUID; set => GUID = value; }
     }
 }
