@@ -53,7 +53,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
                 {
                     return result;
                 }
-                return new Vector2(0, 0);
+                return Vector2.zero;
             }
         }
     }
@@ -61,9 +61,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
     public interface ISkillTreeMetaData
     {
         public Vector2 PositionOf(string skillName) => Vector2.zero;
-
-        public static ISkillTreeMetaData Default = new DefaultMetaData();
-
+        public static ISkillTreeMetaData Default = new DefaultMetaData();        
         private class DefaultMetaData : ISkillTreeMetaData {};
     }
 

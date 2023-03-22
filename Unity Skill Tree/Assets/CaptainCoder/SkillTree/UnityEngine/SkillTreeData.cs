@@ -16,6 +16,10 @@ namespace CaptainCoder.SkillTree.UnityEngine
         public S Root { get; private set; }
         [field: SerializeField]
         public List<Edge> Edges { get; private set; }
+        [field: SerializeField]
+        public Color UnacquiredEdgeColor { get; private set; } = Color.red;
+        [field: SerializeField]
+        public Color AcquiredEdgeColor { get; private set; } = Color.green;
         public bool GenerateUXML;
         public override ISkillTree<ISkilledEntity<ISkill>, ISkill> SkillTree
         {

@@ -35,7 +35,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
             XmlElement lineElement = XML.CreateElement("LineElement");
             string parentName = SanitizeSkillName(parent);
             string childName = SanitizeSkillName(child);
-            lineElement.SetAttribute("name", $"{parentName} -> {childName}");
+            lineElement.SetAttribute("name", $"{parentName}_{childName}");
             lineElement.SetAttribute("start-element", parentName);
             lineElement.SetAttribute("end-element", childName);
             lineElement.SetAttribute("style", $"{TransparentBackground} {AbsolutePosition}");

@@ -15,7 +15,7 @@ MonoBehaviour:
   <GUID>k__BackingField: 2a889779-d6a3-45f2-9431-085534087189
   <Name>k__BackingField: Hero
   <Description>k__BackingField: You is a hero!
-  <Image>k__BackingField: {fileID: 21300000, guid: 03e10783b8cbcce42af2a3ec24fd51c2, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: 12a5237829112ee4aa8ac383af8d7b99, type: 3}
   <RequiredLevel>k__BackingField: 1
   <RequiredSkillPoints>k__BackingField: 1
   <AdditionalRequirements>k__BackingField: []

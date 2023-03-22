@@ -1,0 +1,12 @@
+:root{
+    --unacquired-color: #FF0000;
+    --acquired-color: #00FF00;
+}
+
+.acquired-edge {
+    color: var(--acquired-color);
+}
+
+.unacquired-edge {
+    color: var(--unacquired-color);
+}
