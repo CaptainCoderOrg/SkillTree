@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787ed2392cd27bc49acc7a876c7570e3, type: 3}
+  m_Name: Skill Basa
+  m_EditorClassIdentifier: 
+  <GUID>k__BackingField: f22ff254-962d-476b-9850-ecf3a293571f
+  <Name>k__BackingField: Skill Basa
+  <Description>k__BackingField: The Skill Basa makes it so you can kill the basa.
+  <Image>k__BackingField: {fileID: 21300000, guid: 3da23703e1475d8438bd3a42cf25bd62, type: 3}
+  <RequiredLevel>k__BackingField: 1
+  <RequiredSkillPoints>k__BackingField: 3
+  <AdditionalRequirements>k__BackingField: []

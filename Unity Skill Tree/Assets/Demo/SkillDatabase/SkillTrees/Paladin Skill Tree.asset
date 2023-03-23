@@ -24,6 +24,8 @@ MonoBehaviour:
     <Child>k__BackingField: {fileID: 11400000, guid: 2b49a5ece29eee549a5c93da45651861, type: 2}
   - <Parent>k__BackingField: {fileID: 11400000, guid: 3a3eb8896a254704aa8936af41973bb0, type: 2}
     <Child>k__BackingField: {fileID: 11400000, guid: 9ead3eeb1e50e6f4f9549b60c13321c3, type: 2}
+  - <Parent>k__BackingField: {fileID: 11400000, guid: 3a3eb8896a254704aa8936af41973bb0, type: 2}
+    <Child>k__BackingField: {fileID: 11400000, guid: 372cdd2fb2958514d9290c06502a1dc3, type: 2}
   <UnacquiredEdgeColor>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
   <AcquiredEdgeColor>k__BackingField: {r: 0, g: 1, b: 0, a: 1}
   GenerateUXML: 0

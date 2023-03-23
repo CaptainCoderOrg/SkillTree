@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -27,19 +29,65 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
             _buyButton.clicked += BuySkill;
             _buyButton.SetEnabled(false);
             AddListeners(root);
+            Player.OnSkillAcquired += HandleSkillsChanged;
+        }
+
+        private void HandleSkillsChanged(string acquired, HashSet<string> skills)
+        {
+            Debug.Log($"Acquired: {acquired}");
+            if (_skillChange.TryGetValue(acquired, out var handlers))
+            {
+                Debug.Log($"Found {handlers.Count} possible edges.");
+                foreach (var handler in handlers)
+                {
+                    handler.Invoke(skills);
+                }
+            }
+        }
+
+        private readonly Dictionary<string, List<System.Action<HashSet<string>>>> _skillChange = new();
+
+        private List<System.Action<HashSet<string>>> EdgeActions(string start)
+        {
+            if (!_skillChange.TryGetValue(start, out var list))
+            {
+                list = new List<System.Action<HashSet<string>>>();
+                _skillChange[start] = list;
+            }
+            return list;
         }
 
         private void AddListeners(VisualElement toScan)
         {
-            if (toScan is SkillNodeElement)
+            if (toScan is SkillNodeElement skillNode)
             {
-                SkillNodeElement asSkillNode = toScan as SkillNodeElement;
-                asSkillNode.OnClicked += OnSelect;
+                skillNode.OnClicked += OnSelect;
+            }
+            if (toScan is LineElement lineElement)
+            {
+                Debug.Log("Registering line element");
+                (SkillNodeElement start, SkillNodeElement end) = lineElement.Nodes;
+                AddEdgeAction(start, end, lineElement);
+                AddEdgeAction(end, start, lineElement);
+
             }
             foreach (VisualElement child in toScan.Children())
             {
                 AddListeners(child);
             }
+        }
+
+        private void AddEdgeAction(SkillNodeElement start, SkillNodeElement end, LineElement lineElement)
+        {
+            var actions = EdgeActions(start.SkillGuid);
+            void CheckHighlightEdgeAction(HashSet<string> skillGuids)
+            {
+                if (skillGuids.Contains(end.SkillGuid))
+                {
+                    lineElement.Acquired = true;
+                }
+            };
+            actions.Add(CheckHighlightEdgeAction);
         }
 
         private void OnSelect(SkillNodeElement selected)

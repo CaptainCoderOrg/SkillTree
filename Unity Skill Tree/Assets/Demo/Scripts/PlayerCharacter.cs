@@ -15,6 +15,10 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
         public List<SkillData> AcquiredSkills { get; private set; }
         public HashSet<SkillData> Skills => AcquiredSkills.ToHashSet();
         HashSet<SkillData> ISkilledEntity<SkillData>.Skills => Skills;
+        public event System.Action<string, HashSet<string>> OnSkillAcquired;
+
+        // TODO: We may want to cache the set of GUIDs rather than calculating them every time.
+        private HashSet<string> SkillGuids => Skills.Select(s => s.GUID).ToHashSet();    
 
         public bool AcquireSkill(ISkillNode<IPlayerCharacter, SkillData> toAcquire)
         {
@@ -22,7 +26,7 @@ namespace CaptainCoder.SkillTree.UnityEngine.Demo
             if (!toAcquire.CheckRequirements(this)) { return false; }
             SkillPoints -= toAcquire.Skill.RequiredSkillPoints;
             AcquiredSkills.Add(toAcquire.Skill);
-            Debug.Log($"Purchased: {toAcquire.Skill.Name}");
+            OnSkillAcquired?.Invoke(toAcquire.Skill.GUID, SkillGuids);
             return true;            
         }
     }

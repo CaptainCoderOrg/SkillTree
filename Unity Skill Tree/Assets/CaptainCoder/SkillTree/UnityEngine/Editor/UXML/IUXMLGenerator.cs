@@ -32,7 +32,7 @@ namespace CaptainCoder.SkillTree.UnityEngine
         }
         public static XmlElement CreateLineElement(ISkill parent, ISkill child)
         { 
-            XmlElement lineElement = XML.CreateElement("LineElement");
+            XmlElement lineElement = XML.CreateElement("CaptainCoder.SkillTree.UnityEngine.LineElement");
             string parentName = SanitizeSkillName(parent);
             string childName = SanitizeSkillName(child);
             lineElement.SetAttribute("name", $"{parentName}_{childName}");

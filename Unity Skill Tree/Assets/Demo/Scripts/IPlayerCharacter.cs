@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CaptainCoder.SkillTree.UnityEngine.Demo
 {
-    public interface IPlayerCharacter : ISkilledEntity<SkillData>
+    public interface IPlayerCharacter : ISkilledEntity<SkillData>, ISkillChanged
     {
         public int Level { get; }
         public int SkillPoints { get; }
